@@ -36,6 +36,7 @@ jobs:
       - uses: databricks/setup-cli@main
       # Deploy the bundle to the "qa" target as defined
       # in the bundle's settings file.
+      - run: echo ${{ env.DATABRICKS_CLIENT_ID }}
       - run: databricks bundle validate
         working-directory: .
         env:
