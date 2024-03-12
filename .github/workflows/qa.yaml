@@ -36,19 +36,19 @@ jobs:
       - uses: databricks/setup-cli@main
       # Deploy the bundle to the "qa" target as defined
       # in the bundle's settings file.
-      - run: echo ${{ env.DATABRICKS_CLIENT_ID }}
+      - run: echo ${{ vars.DATABRICKS_CLIENT_ID }}
       - run: databricks bundle validate
         working-directory: .
         env:
-          DATABRICKS_HOST: ${{ env.ADB_HOST }}
-          DATABRICKS_CLIENT_ID: ${{ env.DATABRICKS_CLIENT_ID }}
+          DATABRICKS_HOST: ${{ vars.ADB_HOST }}
+          DATABRICKS_CLIENT_ID: ${{ vars.DATABRICKS_CLIENT_ID }}
           DATABRICKS_CLIENT_SECRET: ${{ secrets.DATABRICKS_CLIENT_SECRET }}
           DATABRICKS_BUNDLE_ENV: qa
       - run: databricks bundle deploy
         working-directory: .
         env:
-          DATABRICKS_HOST: ${{ env.ADB_HOST }}
-          DATABRICKS_CLIENT_ID: ${{ env.DATABRICKS_CLIENT_ID }}
+          DATABRICKS_HOST: ${{ vars.ADB_HOST }}
+          DATABRICKS_CLIENT_ID: ${{ vars.DATABRICKS_CLIENT_ID }}
           DATABRICKS_CLIENT_SECRET: ${{ secrets.DATABRICKS_CLIENT_SECRET }}
           DATABRICKS_BUNDLE_ENV: qa
 
