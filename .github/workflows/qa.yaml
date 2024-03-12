@@ -34,7 +34,7 @@ jobs:
       # Download the Databricks CLI.
       # See https://github.com/databricks/setup-cli
       - uses: databricks/setup-cli@main
-      - run: databricks auth login --host 
+      - run: databricks auth login
         working-directory: .
         env:
           DATABRICKS_HOST: ${{ env.ADB_HOST }}
