@@ -8,10 +8,8 @@ artifacts:
     type: whl
     path: ./src/libraries/python/dabdemo
 
-sync:
-  include:
+include:
     - ./src/main.py
-
 
 targets:
   qa:
