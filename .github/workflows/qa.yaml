@@ -51,3 +51,5 @@ jobs:
           DATABRICKS_CLIENT_ID: ${{ env.SP_CLIENT_ID }}
           DATABRICKS_CLIENT_SECRET: ${{ secrets.SP_CLIENT_SECRET }}
           DATABRICKS_BUNDLE_ENV: qa
+
+          
