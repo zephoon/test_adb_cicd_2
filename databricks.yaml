@@ -10,7 +10,7 @@ artifacts:
 
 
 targets:
-  dev:
+  qa:
     mode: production
     workspace:
       host: https://adb-8604590382228128.8.azuredatabricks.net/
