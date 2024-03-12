@@ -20,3 +20,4 @@ targets:
     workspace:
       host: https://adb-8604590382228128.8.azuredatabricks.net/
       root_path: /Workspace/dev
+      file_path: /Workspace/dev
