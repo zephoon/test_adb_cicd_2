@@ -43,7 +43,7 @@ jobs:
           DATABRICKS_HOST: ${{ env.ADB_HOST }}
           AZURE_SP_APPLICATION_ID: ${{ env.SP_CLIENT_ID }}
           AZURE_SP_CLIENT_SECRET: ${{ secrets.SP_CLIENT_SECRET }}
-          AZURE_SP_TENANT_ID: ${{ secrets.SP_TENANT_ID }}
+          AZURE_SP_TENANT_ID: ${{ env.SP_TENANT_ID }}
           DATABRICKS_BUNDLE_ENV: qa
       - run: databricks bundle deploy
         working-directory: .
