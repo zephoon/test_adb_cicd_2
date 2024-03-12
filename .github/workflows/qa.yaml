@@ -9,12 +9,15 @@ concurrency: 1
 # Trigger this workflow whenever a pull request is opened against the repo's
 # main branch or an existing pull request's head branch is updated.
 on:
-  pull_request:
-    types:
-      - opened
-      - synchronize
+  push:
     branches:
       - main
+  # pull_request:
+  #   types:
+  #     - opened
+  #     - synchronize
+  #   branches:
+  #     - main
 
 jobs:
   # Used by the "pipeline_update" job to deploy the bundle.
@@ -37,14 +40,14 @@ jobs:
       - run: databricks bundle validate
         working-directory: .
         env:
-          DATABRICKS_HOST: ${{ variables.ADB_HOST }}
-          DATABRICKS_CLIENT_ID: ${{ variables.SP_CLIENT_ID }}
+          DATABRICKS_HOST: ${{ env.ADB_HOST }}
+          DATABRICKS_CLIENT_ID: ${{ env.SP_CLIENT_ID }}
           DATABRICKS_CLIENT_SECRET: ${{ secrets.SP_CLIENT_SECRET }}
           DATABRICKS_BUNDLE_ENV: qa
       - run: databricks bundle deploy
         working-directory: .
         env:
-          DATABRICKS_HOST: ${{ variables.ADB_HOST }}
-          DATABRICKS_CLIENT_ID: ${{ variables.SP_CLIENT_ID }}
+          DATABRICKS_HOST: ${{ env.ADB_HOST }}
+          DATABRICKS_CLIENT_ID: ${{ env.SP_CLIENT_ID }}
           DATABRICKS_CLIENT_SECRET: ${{ secrets.SP_CLIENT_SECRET }}
           DATABRICKS_BUNDLE_ENV: qa
