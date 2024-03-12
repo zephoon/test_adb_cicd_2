@@ -1,0 +1,17 @@
+# Filename: databricks.yml
+bundle:
+  name: test_adb
+
+
+artifacts:
+  dabdemo-wheel:
+    type: whl
+    path: ./src/libraries/python/dabdemo
+
+
+targets:
+  dev:
+    mode: production
+    workspace:
+      host: https://adb-8604590382228128.8.azuredatabricks.net/
+      root_path: /Workspace/dev
