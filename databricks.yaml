@@ -9,9 +9,10 @@ artifacts:
     path: ./src/libraries/python/dabdemo
 
 sync:
+  include:
+    - ./src/main.py
   exclude:
     - ./tests
-     
 
 targets:
   qa:
