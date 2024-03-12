@@ -34,14 +34,7 @@ jobs:
       # Download the Databricks CLI.
       # See https://github.com/databricks/setup-cli
       - uses: databricks/setup-cli@main
-      - run: databricks auth login
-        working-directory: .
-        env:
-          DATABRICKS_HOST: ${{ env.ADB_HOST }}
-          DATABRICKS_CLIENT_ID: ${{ env.DATABRICKS_CLIENT_ID }}
-          DATABRICKS_CLIENT_SECRET: ${{ secrets.DATABRICKS_CLIENT_SECRET }}
       # Deploy the bundle to the "qa" target as defined
-
       # in the bundle's settings file.
       - run: databricks bundle validate
         working-directory: .
