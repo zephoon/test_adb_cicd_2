@@ -13,6 +13,8 @@ sync:
     - ./main.py
   exclude:
     - ./tests
+    - ./main2.py
+    - ./src/test.py
 
 targets:
   qa:
